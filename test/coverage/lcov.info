@@ -1,5 +1,5 @@
 TN:
-SF:C:\Users\linfuxiang\Desktop\jest-test\src\App.vue
+SF:C:\Users\lfx\Desktop\jest-test\src\App.vue
 FN:4,data
 FN:16,checkoutCmp
 FN:4,mounted
@@ -21,7 +21,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:C:\Users\linfuxiang\Desktop\jest-test\src\components\cmp1.vue
+SF:C:\Users\lfx\Desktop\jest-test\src\components\cmp1.vue
 FN:2,data
 FNF:1
 FNH:1
@@ -33,7 +33,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:\Users\linfuxiang\Desktop\jest-test\src\components\cmp2.vue
+SF:C:\Users\lfx\Desktop\jest-test\src\components\cmp2.vue
 FN:2,data
 FNF:1
 FNH:1

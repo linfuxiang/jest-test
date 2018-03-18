@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App.vue has the expected html structure 1`] = `
+exports[`just test App.vue snapshot 1`] = `
 <div
   id="app"
 >
@@ -8,11 +8,7 @@ exports[`App.vue has the expected html structure 1`] = `
     Welcome to Your Vue.js App
   </h1>
    
-  <div>
-    <h1>
-      Here is cmp1
-    </h1>
-  </div>
+  <!---->
    
   <button>
     checkout component

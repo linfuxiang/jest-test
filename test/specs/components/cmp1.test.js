@@ -1,4 +1,4 @@
-import { shallow } from 'vue-test-utils'
+import { shallow } from '@vue/test-utils'
 import Vue from 'vue'
 import cmp1 from '@/components/cmp1'
 
@@ -16,16 +16,26 @@ import cmp1 from '@/components/cmp1'
 // })
 
 describe('just test cmp1.vue', ()=>{
-	let cmp
+	let wrapper
 	
-	beforeAll(()=>{
-		cmp = shallow(cmp1, {})
+	beforeEach(()=>{
+		wrapper = shallow(cmp1, {
+			propsData: {
+				msg: ''
+			}
+		})
 	})
 
-	it('test Data', ()=>{
-		expect(cmp.vm.msg).toBe('Here is cmp1')
+	it('test rendering', ()=>{
+		expect(wrapper.find('h1').text()).toBe('')
 	})
-	it('snapshot', () => {
-  		expect(cmp.element).toMatchSnapshot()
+	it('test props changing', ()=>{
+		wrapper.setProps({
+			msg: 'Ronald Cheng'
+		})
+		expect(wrapper.find('h1').text()).toBe('Ronald Cheng')
 	})
+	// it('snapshot', () => {
+ //  		expect(wrapper.element).toMatchSnapshot()
+	// })
 })

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`just test App.vue snapshot 1`] = `
+exports[`just test App.vue test rendering 1`] = `
 <div
   id="app"
 >
@@ -8,10 +8,19 @@ exports[`just test App.vue snapshot 1`] = `
     Welcome to Your Vue.js App
   </h1>
    
+  <input />
+   
   <!---->
    
   <button>
-    checkout component
+    c'mon in
   </button>
+   
+  <div
+    class="come"
+    style="display: none;"
+  >
+    Hey, i'm coming
+  </div>
 </div>
 `;

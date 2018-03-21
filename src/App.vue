@@ -1,33 +1,33 @@
 <template>
   <div id="app">
     <h1>{{ msg }}</h1>
-    <component :is="showingCmp"></component>
-    <button @click="checkoutCmp">checkout component</button>
+
+    <input v-model="inputCpm1">
+    <cmp1 :msg="inputCpm1"></cmp1>
+
+    <button @click="show=!show">c'mon in</button>
+    <div class="come" v-show="show">Hey, i'm coming</div>
   </div>
 </template>
 
 <script>
 import cmp1 from './components/cmp1'
-import cmp2 from './components/cmp2'
+import axios from 'axios'
 export default {
   name: 'app',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      showingCmp: '',
+      inputCpm1: '',
+      show: false,
     }
   },
   components: {
     cmp1,
-    cmp2,
   },
   methods: {
-    checkoutCmp() {
-      this.showingCmp = this.showingCmp == 'cmp1' ? 'cmp2' : 'cmp1'
-    },
   },
   mounted() {
-    this.showingCmp = 'cmp1'
   },
 }
 </script>

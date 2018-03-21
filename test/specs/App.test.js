@@ -1,4 +1,5 @@
-import { shallow } from 'vue-test-utils'
+// import { shallow } from 'vue-test-utils'
+import { mount, shallow } from '@vue/test-utils'
 import Vue from 'vue'
 import App from '@/App'
 
@@ -26,23 +27,33 @@ import App from '@/App'
 // })
 
 describe('just test App.vue', ()=>{
-	let cmp
+	let wrapper
 	
-	beforeAll(()=>{
-		cmp = shallow(App, {})
+	beforeEach(()=>{
+		wrapper = shallow(App, {})
 	})
 
-	it('test Data', ()=>{
-		expect(cmp.vm.msg).toBe('Welcome to Your Vue.js App')
-		expect(cmp.vm.showingCmp).toBe('cmp1')
+	it('test rendering', ()=>{
+		expect(wrapper.find('h1').text()).toBe('Welcome to Your Vue.js App')
+		expect(wrapper.find('input').element._value).toBe('')
+		expect(wrapper.find('.come').isVisible()).toBe(false)
+		expect(wrapper.element).toMatchSnapshot()
 	})
-	it('test checkoutCmp func', () => {
-		cmp.vm.checkoutCmp()
-		expect(cmp.vm.showingCmp).toBe('cmp2')
-		cmp.vm.checkoutCmp()
-		expect(cmp.vm.showingCmp).toBe('cmp1')
+	it('test input', () => {
+		wrapper.setData({ 
+			inputCpm1: 'Ronald Cheng'
+		})
+		expect(wrapper.find('input').element._value).toBe('Ronald Cheng')
 	})
-	it('snapshot', () => {
-  		expect(cmp.element).toMatchSnapshot()
+	it('test btn', () => {
+		// show
+		wrapper.find('button').trigger('click')
+		expect(wrapper.find('.come').isVisible()).toBe(true)
+		// hide
+		wrapper.find('button').trigger('click')
+		expect(wrapper.find('.come').isVisible()).toBe(false)
 	})
+	// it('snapshot', () => {
+ //  		expect(wrapper.element).toMatchSnapshot()
+	// })
 })

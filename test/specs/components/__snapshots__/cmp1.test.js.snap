@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`just test cmp1.vue snapshot 1`] = `
-<div>
-  <h1>
-    Here is cmp1
-  </h1>
-</div>
-`;
